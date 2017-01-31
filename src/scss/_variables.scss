@@ -1,0 +1,37 @@
+// font families
+$main-font-family: "Slabo 27px", serif;
+$titles-font-family: "Roboto Condensed", sans-serif;
+$body-font-family: $main-font-family;
+
+// font sizes
+$font-size-base: 16px;
+$font-size-small: $font-size-base - 6px;
+$font-size-large: $font-size-base + 6px;
+$font-size-h1: $font-size-base + 15px;
+$font-size-h2: $font-size-base + 12px;
+$font-size-h3: $font-size-base + 9px;
+$font-size-h4: $font-size-base + 6px;
+$font-size-h5: $font-size-base + 3px;
+$font-size-h6: $font-size-base;
+
+// colors
+$color-adrift-dreams: #0B486B;
+$color-beautys-bath: #255D67;
+$color-could-sail: #3B8686;
+$color-sea-foaming: #A8DBA8;
+$color-grey: #D5D5D5;
+
+// components colors
+$color-primary: $color-adrift-dreams;
+$color-secondary: $color-could-sail;
+
+$main-text-color: $color-beautys-bath;
+$body-background-color: white;
+
+// responsive breakpoints
+$large-screen-width: 1024px;    //iPad en ladscape o superior
+$medium-screen-width: 768px;    //iPad portrait
+$small-screen-width: $medium-screen-width - 1;  //smartphones
+
+// border radius
+$border-radius-default: 5px;
