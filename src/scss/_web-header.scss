@@ -1,0 +1,114 @@
+// Variables
+$navbar-background-color: $color-sea-foaming;
+$navbar-text-color: white;
+$navbar-title-font: $titles-font-family;
+
+
+.web-header {
+    background: $navbar-background-color;
+    // margin-bottom: 50px;
+    padding: 10px;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    background-color: $color-sea-foaming;
+    top: 0px;
+    display: flex;
+    font-family: $navbar-title-font;
+    list-style: none;
+
+    
+    #nav-btn {
+        display: none;
+    }
+
+    nav[role="custom-dropdown"] {
+        position: relative;
+        width: 100%;
+            
+        a, label {
+            color: $navbar-text-color;
+            text-decoration: none;
+            font: 30px;
+            transition: color .3s ease-in-out;
+        }
+            
+        ul {
+            padding: 0;
+            margin: 0 auto;
+            width:100%;
+            list-style: none;
+
+            li {
+                float: left;
+                padding: 8px 8px;
+                width: 20%;
+                text-align: center;
+                transition-duration: .3s;
+                transition-timing-function: ease-in-out;
+                transition-property: box-shadow, color;
+                box-shadow: $color-beautys-bath;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-adrift-dreams;
+                    color: $color-white;
+                    box-shadow: $color-adrift-dreams,
+
+                
+                    a {
+                        color: $navbar-text-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* small screens */
+@include if-is-small-screen {
+
+  nav[role="custom-dropdown"] {
+    ul {
+      display: none;
+      height: 100%;
+    }
+
+    label {
+      position: relative;
+      display: block;
+      width: 100%;
+      min-height: 50px;
+      padding: 8px;
+      font-size: 30px;
+      margin: 0;
+    }
+    
+    label:after {
+      position: absolute;
+      right: 7px;
+      top: 0;
+      content: "\2261";
+    }
+    
+    input[type="checkbox"]:checked ~ label:after {
+      color: $color-primary;
+    }
+        
+    input[type="checkbox"]:checked ~ ul {
+        display: block;
+      li {
+        width: 100%;
+        opacity: .8;
+        text-align: left;
+        display: flex;
+    
+        &:after {
+          position: absolute;
+          right: .25em;
+          content: "\203A";
+        }
+      }        
+    }
+  }
+}

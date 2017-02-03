@@ -8,28 +8,50 @@
     <link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
-    <nav class="navbar">
-		<ul class="navbar-list">
-			<li class="navbar-item active">
-				<a href="#" class="navbar-link">Inicio</a>
-			</li>
-			<li class="navbar-item">
-				<a href="#tech" class="navbar-link">Tecnología</a>
-			</li>
-			<li class="navbar-item">
-				<a href="#culture" class="navbar-link">Cultura</a>
-			</li>
-			<li class="navbar-item">
-				<a href="#business" class="navbar-link">Business</a>
-			</li>
-			<li class="navbar-item">
-				<a href="#politics" class="navbar-link">Política</a>
-			</li>
-		</ul>
-	</nav>
+	<header class="web-header">
+		<div class="div-logo">
+			<img class="img-logo" src="./src/img/menuIcon.png" alt="Logo Ninja Blog">
+			<a href="#" class="logo">Ninja Blog</a>
+		</div>
+			<nav role="custom-dropdown" class="navbar">
+				<input type="checkbox" id="nav-btn">
+				<label for="nav-btn" onclick></label>
+				
+				<ul class="navbar-list">					
+				   <li class="navbar-item">
+					   <a href="#tech" class="navbar-link">Tecnología</a>
+				   </li>
+				   <li>
+					   <a href="#culture" class="navbar-link">Cultura</a>
+				   </li>
+				   <li>
+					   <a href="#business" class="navbar-link">Business</a>
+				   </li>
+				   <li>
+					   <a href="#login" class="navbar-link">Login</a></li>
+				   <li>
+					   <form class="searcher">
+					   		<input type="search" placeholder="Search">
+					   </form>
+				   </li>
+				</ul>
+			</nav>
+		<div class="menu-icon">
+		</div>
+	</header>
+	<div class="container">
+		<section class="">
+			<div class="ui-ideal">
+				<article class="">
+				</article>
+			</div>
+		</section>
+	</div>
 
-    <footer class="footer">
+
+   <!-- <footer class="footer">
 		Ninja Blog &copy; 2017
 	</footer>
+	-->
 </body>
 </html>
