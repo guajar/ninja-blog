@@ -1,6 +1,6 @@
 // Variables
-$navbar-background-color: $color-sea-foaming;
-$navbar-text-color: white;
+$navbar-background-color: $color-primary;
+$navbar-text-color: $color-white;
 $navbar-title-font: $titles-font-family;
 
 
@@ -9,106 +9,126 @@ $navbar-title-font: $titles-font-family;
     // margin-bottom: 50px;
     padding: 10px;
     z-index: 100;
-    position: fixed;
     width: 100%;
-    background-color: $color-sea-foaming;
-    top: 0px;
+    top: 0;
+    left: 0;
     display: flex;
     font-family: $navbar-title-font;
-    list-style: none;
+    justify-content: space-between;
 
-    
-    #nav-btn {
-        display: none;
+     @include if-is-medium-screen {
+         height: 90px;
+     }
+
+    #logo {
+        margin-top: 15px;
+        margin-left: 10px;
+        float: left;
+        width: 10%;
+        height: 35px;
+        background: url('../src/img/menuIcon.png') no-repeat;
+        display: flex;
+
+        @include if-is-medium-screen {
+            width: 40px;
+        }
+
+    } 
+
+    #web-title {
+        margin-top: 20px;
+        margin-left: 5px;
+        height: 40px;
+        &:hover { cursor: pointer; }
     }
 
-    nav[role="custom-dropdown"] {
-        position: relative;
-        width: 100%;
-            
-        a, label {
-            color: $navbar-text-color;
-            text-decoration: none;
-            font: 30px;
-            transition: color .3s ease-in-out;
+    .navbar {
+        float: right;
+        padding: 10px;
+
+        @include if-is-medium-screen {
+            width: 80%;
         }
-            
-        ul {
-            padding: 0;
-            margin: 0 auto;
-            width:100%;
+
+        #menu-icon {
+            float: right;
+            width: 40px;
+            height: 40px;
+            background: url('../src/img/img-menu.png');
+
+             @include if-is-medium-screen {
+                display: none;
+            }
+        }
+
+        a:hover#menu-icon {
+            background-color: #444;
+            border-radius: 4px 4px 0 0;
+
+        }
+
+        .navbar-list {
+            margin-top: 40px;
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            display: none;
+            
+            @include if-is-medium-screen {
+                display: flex;
+                flex-direction: row;
+                float: right;
+                margin-top: 20px;
 
-            li {
+                .inp-search {
+                    margin-top: -10px;
+                }
+            }
+
+            .navbar-item {
+                display: flex;
+                flex-direction: column;
                 float: left;
-                padding: 8px 8px;
-                width: 20%;
-                text-align: center;
-                transition-duration: .3s;
-                transition-timing-function: ease-in-out;
-                transition-property: box-shadow, color;
-                box-shadow: $color-beautys-bath;
-                cursor: pointer;
+                color: $navbar-text-color;
+                margin-bottom: 7px;
 
-                &:hover {
-                    background-color: $color-adrift-dreams;
-                    color: $color-white;
-                    box-shadow: $color-adrift-dreams,
+                @include if-is-medium-screen {
+                    margin-left: 20px;
+                }
 
-                
-                    a {
-                        color: $navbar-text-color;
-                    }
+                input[type=search] {
+                    box-sizing: content-box;
+                    background: $color-white url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+                    border: solid 1px #ccc;
+                    padding: 9px 10px 9px 32px;
+                    width: 50px;
+                    border-radius: $border-radius-default;
+                    transition: all .5s;
+                }
+                input[type=search]:focus {
+                    background-color: #fff;
+                    border-color: $color-could-sail;
+                    box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+                }
+
+                .searcher input[type=search] {
+                    width: 15px;
+                    padding-left: 10px;
+                    color: transparent;
+                    cursor: pointer;
+                }
+                .searcher input[type=search]:focus {
+                    width: 130px;
+                    padding-left: 35px;
+                    color: #000;
+                    background-color: #fff;
+                    cursor: auto;
                 }
             }
         }
+
     }
+
 }
 
-/* small screens */
-@include if-is-small-screen {
-
-  nav[role="custom-dropdown"] {
-    ul {
-      display: none;
-      height: 100%;
-    }
-
-    label {
-      position: relative;
-      display: block;
-      width: 100%;
-      min-height: 50px;
-      padding: 8px;
-      font-size: 30px;
-      margin: 0;
-    }
-    
-    label:after {
-      position: absolute;
-      right: 7px;
-      top: 0;
-      content: "\2261";
-    }
-    
-    input[type="checkbox"]:checked ~ label:after {
-      color: $color-primary;
-    }
-        
-    input[type="checkbox"]:checked ~ ul {
-        display: block;
-      li {
-        width: 100%;
-        opacity: .8;
-        text-align: left;
-        display: flex;
-    
-        &:after {
-          position: absolute;
-          right: .25em;
-          content: "\203A";
-        }
-      }        
-    }
-  }
-}
+  

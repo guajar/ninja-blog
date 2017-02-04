@@ -11,20 +11,40 @@ body {
 body {
     background: $body-background-color;
     color: $main-text-color;
-    font-family: $main-font-family;
     font-size: $font-size-base;
-    margin: 0px;
-    padding: 0px;
+	font-family: $main-font-family;
+    margin: 0;
+    padding: 0;
+	min-height: 100%;
+	position: relative;
+}
+
+a, h2 {
+	color: $color-white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+h2 {
+	text-shadow: 2px 2px 0px darken($body-background-color, 30%);
+    font-family: $titles-font-family;
+	height: 40px;
+	margin: 0;
+}
+
+a:hover, h2:hover {
+	color: $color-grey;
 }
 
 
 footer {
 	width: 100%;
-	background-color: $color-sea-foaming;
+	background-color: $color-primary;	
 	height: 50px;
 	color: $color-white;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
+	bottom:0;
 }

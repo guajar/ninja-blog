@@ -1,0 +1,13 @@
+.container {
+    width: 100%;
+	max-width: 1024px;
+    min-height: 100%;
+	margin: 0 auto;
+	margin-bottom: calc(100% -50px);
+}
+
+.article-container {
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 30px;
+}
