@@ -11,7 +11,6 @@ $article-border-width: 1px;
 	margin: 0 auto;
     margin-top: 110px;
 
-
     .article-container {
         text-align: justify;
         text-justify: inter-word;
@@ -84,8 +83,9 @@ $article-border-width: 1px;
                 .num-likes {
                     margin-top: 15px;
                 }
-                #likes {
+                .likes {
                     width: 40px;
+                    border: 0;
                     background: url('../dist/img/star.png') no-repeat;
                 }
             }
