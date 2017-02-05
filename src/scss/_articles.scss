@@ -3,11 +3,43 @@
 	max-width: 1024px;
     min-height: 100%;
 	margin: 0 auto;
-	margin-bottom: calc(100% -50px);
+	margin-bottom: calc(100% - 50px);
+    margin-top: 110px;
 }
 
 .article-container {
     text-align: justify;
     text-justify: inter-word;
     margin: 30px;
+}
+
+.info-author {
+    display: flex;
+    height: 40px;
+
+    #pic-author {      
+        background: url('../dist/img/unknown.png') no-repeat;
+        background-position: center center;
+        border-radius: 50%;
+        width: 40px;
+    }
+
+    .art-detail {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        
+        #name-author,a {
+            color: $color-my-green;
+            display: flex;
+        }
+
+        .div-time {
+
+            .readingTime {
+                margin-left: 10px;
+            }
+        }
+    }
+    
 }

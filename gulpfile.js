@@ -36,6 +36,12 @@ var uglifyConfig = {
     dest: './dist/'
 };
 
+var imagesConfig = {
+    imagesTaskName: "optimize-images",
+    src: "src/img/*",
+    dest: "./dist/img/"
+};
+
 
 
 // definimos la tarea por defecto
@@ -43,8 +49,8 @@ gulp.task("default", [sassConfig.compileSassTaskName, jsConfig.concatJsTaskName]
 
     // arrancar el servidor de browser sync
     browserSync.init({
-        server: "./"
-        //proxy: "127.0.0.1:8000"     //Conectar browserSync con sparRest(Backend)
+        //server: "./"
+        proxy: "127.0.0.1:8000"     //Conectar browserSync con sparRest(Backend)
     });
 
     // cuando haya cambios en archivos scss, compila sass
@@ -100,5 +106,13 @@ gulp.task(uglifyConfig.uglifyTaskName, function() {
     .pipe(uglify())
     .pipe(gulp.dest(uglifyConfig.dest))
     .pipe(notify("JS Minificado!!!!"));
+});
+
+// optimiza las imágenes
+gulp.task(imagesConfig.imagesTaskName, function(){
+    gulp.src(imagesConfig.src)
+    //.pipe(responsive(imagesConfig.responsive))  // genera las imágenes responsive
+    .pipe(imagemin())   // optimiza el tamaño de las imagenes
+    .pipe(gulp.dest(imagesConfig.dest));
 });
 

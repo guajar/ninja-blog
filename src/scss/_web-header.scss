@@ -6,12 +6,12 @@ $navbar-title-font: $titles-font-family;
 
 .web-header {
     background: $navbar-background-color;
-    // margin-bottom: 50px;
     padding: 10px;
     z-index: 100;
     width: 100%;
     top: 0;
     left: 0;
+    position: fixed;
     display: flex;
     font-family: $navbar-title-font;
     justify-content: space-between;
