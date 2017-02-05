@@ -1,45 +1,107 @@
+// variables
+$article-img-width: 100%;
+$article-img-height: 50%;
+$article-border-color: $color-grey;
+$article-border-width: 1px;
+
+//styles
 .container {
     width: 100%;
 	max-width: 1024px;
-    min-height: 100%;
 	margin: 0 auto;
-	margin-bottom: calc(100% - 50px);
     margin-top: 110px;
-}
 
-.article-container {
-    text-align: justify;
-    text-justify: inter-word;
-    margin: 30px;
-}
 
-.info-author {
-    display: flex;
-    height: 40px;
-
-    #pic-author {      
-        background: url('../dist/img/unknown.png') no-repeat;
-        background-position: center center;
-        border-radius: 50%;
-        width: 40px;
-    }
-
-    .art-detail {
+    .article-container {
+        text-align: justify;
+        text-justify: inter-word;
+        margin: 30px;
         display: flex;
         flex-direction: column;
-        margin-left: 10px;
-        
-        #name-author,a {
-            color: $color-my-green;
+        border: $article-border-width solid $article-border-color;
+        padding: 10px;
+
+
+        .info-author {
             display: flex;
+            height: 40px;
+
+            #pic-author {      
+                background: url('../dist/img/unknown.png') no-repeat;
+                background-position: center center;
+                border-radius: 50%;
+                width: 40px;
+            }
+
+            .art-detail {
+                display: flex;
+                flex-direction: column;
+                margin-left: 10px;
+                
+                #name-author,a {
+                    color: $color-my-green;
+                    display: flex;
+                }
+
+                .div-time {
+
+                    .readingTime {
+                        margin-left: 10px;
+                    }
+                }
+            }       
         }
 
-        .div-time {
+        .art-content {
+            .article-image {
+                width: $article-img-width;
+                height: $article-img-height;
 
-            .readingTime {
-                margin-left: 10px;
+                @include if-is-medium-screen {
+                    height: $article-img-height + 20%;
+                }
+            }
+            .div-video {
+                #my-video {
+                    width: $article-img-width;
+                    height: $article-img-height;
+
+                    @include if-is-medium-screen {
+                        height: $article-img-height + 20%;
+                    }
+                }              
             }
         }
+
+        .art-social {
+            margin-top: 10px; 
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+
+            .div-likes {
+                display: flex;
+                .num-likes {
+                    margin-top: 15px;
+                }
+                #likes {
+                    width: 40px;
+                    background: url('../dist/img/star.png') no-repeat;
+                }
+            }
+            
+            .div-comments {
+                display: flex;
+                .num-comm {
+                    margin-top: 15px;
+                }
+                #comments {
+                    width: 40px;
+                    margin-left: 10px; 
+                    background: url('../dist/img/message.png') no-repeat;
+                }   
+            }
+        }
+            
     }
-    
 }
