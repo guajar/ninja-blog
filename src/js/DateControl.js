@@ -19,15 +19,16 @@ module.exports = {
                 timeAgo = now.diff(datemoment, 'h');
                 document.getElementById('date').innerHTML = timeAgo + " hours";
             }  else if (timeAgo < 604800)  {
-                timeAgo = now.diff(datemoment, 'd');
-                document.getElementById('date').innerHTML = timeAgo + " days";
+                document.getElementById('date').innerHTML = datemoment.format('dddd');
             }  else {
-                timeAgo = now.diff(datemoment, 'd');
-                document.getElementById('date').innerHTML = timeAgo;
+                timeAgo = now.diff(datemoment);
+                document.getElementById('date').innerHTML = datemoment.format('YYYY-MM-DD HH:mm:ss');
             }
+            
         };
 
         update();
+        setInterval(update, 1000);
         
     }
 };
