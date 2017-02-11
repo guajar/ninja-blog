@@ -94,6 +94,8 @@ $article-border-width: 1px;
                 display: flex;
                 .num-comm {
                     margin-top: 15px;
+                    color: $main-text-color;
+                    font-weight: normal;
                 }
                 #comments {
                     width: 40px;

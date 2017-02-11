@@ -1,6 +1,6 @@
 var $ = require('jquery');
 var moment = require('moment');
-var dateHTML =  $('#date').attr('datetime');
+var dateHTML =  $('.postDate').attr('datetime');
 
 module.exports = {
     calcDate: function() {
@@ -9,20 +9,21 @@ module.exports = {
             var now = moment();
             var datemoment = moment(dateHTML, 'YYYY-M-D HH:mm:ss');            
             var timeAgo = now.diff(datemoment, 's');
-            console.log(timeAgo);
+
             if (timeAgo < 60) {
-                document.getElementById('date').innerHTML = timeAgo + " seconds";
+                $('.postDate').text(timeAgo + " seconds");
             } else if (timeAgo < 3600) {  
                 timeAgo = now.diff(datemoment, 'm');              
-                document.getElementById('date').innerHTML = timeAgo + " minutes";
+                $('.postDate').text(imeAgo + " minutes");
             } else if (timeAgo < 86400) {
                 timeAgo = now.diff(datemoment, 'h');
-                document.getElementById('date').innerHTML = timeAgo + " hours";
+                $('.postDate').text(timeAgo + " hours");
             }  else if (timeAgo < 604800)  {
-                document.getElementById('date').innerHTML = datemoment.format('dddd');
+                timeAgo = now.diff(datemoment);
+                $('.postDate').text(datemoment.format('dddd'));
             }  else {
                 timeAgo = now.diff(datemoment);
-                document.getElementById('date').innerHTML = datemoment.format('YYYY-MM-DD HH:mm:ss');
+                $('.postDate').text(datemoment.format('YYYY-MM-DD HH:mm:ss'));
             }
             
         };

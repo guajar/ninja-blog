@@ -9,7 +9,6 @@ $(document).ready(function() {
     DateControl.calcDate();
 
     // manejador del contador "likes"
-    $(".likes").on("click", function() {
-        LikeCounter.counter();
-    });
+    LikeCounter.counter();
+
 });
