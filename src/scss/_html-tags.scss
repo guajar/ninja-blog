@@ -52,8 +52,11 @@ footer {
 	height: 50px;
 	color: $color-white;
 	display: flex;
-	flex-flow: row wrap;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	bottom:0;
+	.top-link {
+		margin-left: 10px;
+	}
 }

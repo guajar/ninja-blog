@@ -37,7 +37,7 @@ $article-border-width: 1px;
                 flex-direction: column;
                 margin-left: 10px;
                 
-                #name-author,a {
+                #name-author, a {
                     color: $color-my-green;
                     display: flex;
                 }
@@ -52,6 +52,14 @@ $article-border-width: 1px;
         }
 
         .art-content {
+            .link-text {
+                color: $main-text-color;
+                font-weight: bold;
+            }
+            .art-title {
+                color: $main-text-color;
+                font-weight: normal;
+            }
             .article-image {
                 width: $article-img-width;
                 height: $article-img-height;
@@ -61,6 +69,7 @@ $article-border-width: 1px;
                 }
             }
             .div-video {
+                margin-top: -5px;
                 #my-video {
                     width: $article-img-width;
                     height: $article-img-height;
@@ -80,10 +89,12 @@ $article-border-width: 1px;
 
             .div-likes {
                 display: flex;
-                .num-likes {
-                    margin-top: 15px;
-                }
                 .likes {
+                    width: 40px;
+                    border: 0;
+                    background: url('../dist/img/star2.png') no-repeat;
+                }
+                .no-likes {
                     width: 40px;
                     border: 0;
                     background: url('../dist/img/star.png') no-repeat;

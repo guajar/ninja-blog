@@ -1,0 +1,129 @@
+<!<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Blog</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+    initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="./dist/style.css">
+</head>
+<body>
+	<header class="web-header">
+		<a href="index.html" id="logo"></a>
+		<h2 href="index.html" id="web-title">忍者 Blog</h2>
+		<nav class="navbar">
+			<a href="#" id="menu-icon"></a>			
+			<ul class="navbar-list">					
+				<li class="navbar-item">
+					<a href="#tech" class="navbar-link">Tecnology</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#culture" class="navbar-link">Culture</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#business" class="navbar-link">Business</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#login" class="navbar-link">Sign in</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#register" class="navbar-link">Sign up</a>
+				</li>
+				<li class="navbar-item inp-search">
+					<form class="searcher">
+						<input type="search" placeholder="Search">
+					</form>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+		<section class="section-container">
+			<article class="article-container">
+				<div class="info-author">
+					<a href="#" id="pic-author"></a>
+					<div class="art-detail">
+						<a href="#" id="name-author">Jose Antonio Maldonado</a>
+						<div class="div-time">
+							<time id="date" class="postDate" datetime="2017-02-10 20:12:00"></time>
+						</div>
+					</div>
+				</div>
+				<div class="art-content">
+					<h3>Trumpsum Text</h3>
+					<img class="article-image" src="../dist/img/yoda.jpeg" alt="Yoda image">
+					<p>I think the only card she has is the Lorem card. I don't think anybody knows it
+					was <strong>Russia</strong> that wrote Lorem Ipsum, but I don't know, maybe it was. It could be
+					Russia, but it could also be <strong>China</strong>...</p>
+                    <p><i>You're telling the enemy exactly what you're going to do</i>. No wonder you've been
+                    fighting Lorem Ipsum your entire adult life. You could see there was text coming
+                    out of her eyes, text coming out of her wherever. My placeholder text, I think,
+                    is going to end up being very good with women.</p>
+                    <p>I’m doing very well. <a href="http://trumpsumipsum.com/" class="link-text">Make America Great Again!</a> People that are here, like Hispanics that are against me, 
+                    but I’ve had Muslims call and tell me you’re right with them. It's gonna be huge.  I mean, there’s tremendous hatred. 
+                    Even the, even the guy they caught in Paris. He was being hid out by other Muslims, and everybody is after him, 
+                    and he’s living right next to where he grew up.  There’s a serious, serious problem. People come up to me all the time and ask. 
+                    I’ve had many polls that are legally. And I think that just to try and answer your question: Uh, 
+                    I am the least racist person that you will ever meet. Okay. That I can tell you. Do you want to know? I'll tell you. 
+                    With the Muslim thing, I think I’ll be able to make my  points. It's gonna be huge.  
+                    I mean, you know you may think of it as negative. Many people that vote. You're gonna love it. 
+                    Like people leaving voting booths and all, I’m doing very well with them. It's gonna be huge.  
+                    I mean, you know, you know, you know, but, but I think it</p>
+				</div>
+				<div class="art-social">
+					<div class="div-likes">
+						<button id="idLk1" class="no-likes" title="Me gusta"></button>
+					</div>
+					<div class="div-comments">
+						<a href="#" id="idComms" class="num-comm">0</span>
+						<a id="comments"></a>							
+					</div>
+				</div>
+			</article>	
+		</section>
+		<h2 class="comm-title">Comments</h2>
+        <section class="comms-list">            
+            <div class="ui-ideal">
+				<article class="comment">
+					<div class="author-name">
+						José Antonio Maldonado
+					</div>
+					<div class="comm-text">
+						El mejor comentario del mundo
+					</div>
+				</article>
+            </div>
+            <div class="ui-error">
+                Se ha producido un error
+            </div>
+            <div class="ui-blank">
+                Not comments yet
+            </div>
+            <div class="ui-loading">
+                Loading...
+            </div>
+        </section>
+        <section class="section-form">
+            <h2 class="form-title">Add your comment</h2>
+            <form class="new-comm-form" novalidate>                
+                <div>
+                    <input type="text" id="form-name" name="name" placeholder="Full name" required>
+                </div>
+                <div>
+                    <input type="email" id="form-mail" name="mail" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                </div>
+                <div>
+                    <textarea id="comment" name="text" class="comment-input" placeholder="Your comment (120 words max.)"></textarea>
+                </div>
+                <button id="new-comm" title="New comment">Submit</button>
+            </form>
+        </section>
+	</main>
+    <footer class="footer">
+		<h4>Ninja Blog &copy; 2017</h4>
+		<a href="#" class="top-link">- Go Up</a>
+	</footer>
+
+	<script src="dist/main.js"></script>
+</body>
+</html>

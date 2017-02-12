@@ -14,6 +14,7 @@ var cssnano = require('cssnano');
 var imagemin = require('gulp-imagemin');
 var responsive = require('gulp-responsive');
 
+
 // config
 var sassConfig = {
     compileSassTaskName: 'compile-sass',
@@ -45,7 +46,7 @@ var imagesConfig = {
 
 
 // definimos la tarea por defecto
-gulp.task("default", [sassConfig.compileSassTaskName, jsConfig.concatJsTaskName], function(){
+gulp.task("default", [sassConfig.compileSassTaskName, jsConfig.concatJsTaskName, imagesConfig.imagesTaskName], function(){
 
     // arrancar el servidor de browser sync
     browserSync.init({
@@ -91,8 +92,8 @@ gulp.task(jsConfig.concatJsTaskName, function(){
     }))
     .pipe(buffer()) // convertimos a buffer para que funcione el siguiente pipe
     // .pipe(concat(jsConfig.concatFile))
-    .pipe(uglify())     // minificamos el código js
     .pipe(sourcemaps.init({ loadMaps:true }))        //Empezamos a capturar los sourcemaps
+    .pipe(uglify())     // minificamos el código js
     .pipe(gulp.dest(uglifyConfig.dest))
     .pipe(sourcemaps.write('./'))       //terminamos de capturar los sourcemaps
     .pipe(gulp.dest(jsConfig.dest))
@@ -102,7 +103,7 @@ gulp.task(jsConfig.concatJsTaskName, function(){
 
 // minifica js
 gulp.task(uglifyConfig.uglifyTaskName, function() {
-    gulp.src(uglify.src)
+    gulp.src(uglifyConfig.src)
     .pipe(uglify())
     .pipe(gulp.dest(uglifyConfig.dest))
     .pipe(notify("JS Minificado!!!!"));

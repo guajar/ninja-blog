@@ -24,12 +24,10 @@ module.exports = {
             }  else {
                 timeAgo = now.diff(datemoment);
                 $('.postDate').text(datemoment.format('YYYY-MM-DD HH:mm:ss'));
-            }
-            
+            }            
         };
 
         update();
-        setInterval(update, 1000);
-        
+        setInterval(update, 1000);        
     }
 };
