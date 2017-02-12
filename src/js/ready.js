@@ -16,16 +16,7 @@ $(document).ready(function() {
     DateControl.calcDate();
 
     // manejador del contador "likes" 
-    var ids = $(this).find(".no-likes").each(function(i) {
-        var id = this;
-    });
-
-/*
-    for(var i=0; i<3; i++) {
-        var c = localStorage.getItem('clickcount' + i);
-    }
-*/
-    LikeCounter.counter();
+    //LikeCounter.counter();
     $(".art-social").on("click", ".likes" || ".no-likes", function() {
         var likeId = $(this).data("id");
         if(typeof(Storage) !== "undefined") {  
