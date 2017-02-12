@@ -3,7 +3,7 @@ var CommsService = require('./CommsService');
 
 module.exports = {
     setUiIdeal: function() {
-         $('.comms-list').removeClass().addClass('comms-list ideal');
+        $('.comms-list').removeClass().addClass('comms-list ideal');
     },
 
     setUiBlank: function() {
@@ -26,11 +26,11 @@ module.exports = {
 
         //cargamos los comentarios desde el backend
         CommsService.list(function(comms){ // si nos devuelve comentarios
-            if (comms.length == 0) {
+            if (comms.length === 0) {
                 self.setUiBlank(); // si no hay comentarios -> estado en blanco
             } else {
                 // pintar las comentarios en el listado
-                self.Comms(comms);
+                self.renderComms(comms);
                 self.setUiIdeal(); // ponemos el estado ideal
             }
         }, function(error){ // si se produce algún error

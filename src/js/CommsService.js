@@ -20,7 +20,7 @@ module.exports = {
     },
 
     //guardar un comentario
-    save: function(comment) {
+    save: function(comment, successCallback, errorCallback) {
         $.ajax({
             url: API_URL,        
             type: "post",       // post => Crear una canción

@@ -2,13 +2,12 @@ var $ = require('jquery');
 var CommsService = require('./CommsService');
 var CommsListManager = require('./CommsListManager');
 
-var form = $('.new-comm-form');
-var inputName = $('#form-name');
+var inputName = $('#form-name')[0];
 var inputEmail = $('#form-mail')[0];
 var commentsTextArea = $("#comment");
 
 
-form.on("submit", function() {
+$('.new-comm-form').on("submit", function() {
     var self = this;
 
     if(inputName.checkValidity() === false) {
@@ -17,7 +16,6 @@ form.on("submit", function() {
         return false;
     } 
 
-
     if(inputEmail.checkValidity() === false) {
         alert("Insert email correctly");
         inputEmail.focus();
@@ -25,7 +23,6 @@ form.on("submit", function() {
     } 
 
     if (countWords(commentsTextArea.val()) > 120) {
-        console.log(commentsTextArea.val());
         alert("120 words max.");
         commentsTextArea.focus();
         return false;
@@ -33,8 +30,8 @@ form.on("submit", function() {
 
     //Con todos los campos OK, guardamos en el Backend la canción
     var comment = {
-        author: inputName.value,
-        mail: inputEmail.value,
+        author: $('#form-name').val(),
+        mail: $('#form-mail').val(),
         comentario: commentsTextArea.val()
     };
 

@@ -1,0 +1,88 @@
+.section-form {
+    margin: 30px;
+
+    .form-title {
+        color: $main-text-color;
+        margin-bottom: -10px;
+    }
+
+    .new-comm-form {
+
+        .div-mailname {
+            margin-top: 10px;
+
+            @include if-is-medium-screen {
+                #form-name {
+                float: left;
+            }
+                #form-mail {
+                    float: right;
+                }
+            }
+            input {
+                width: 100%;
+                margin-top: 10px;
+                border-radius: $border-radius-default;
+                box-shadow: inset 0 1px 2px rgba(0,0,0, .55), 0px 1px 1px rgba(255,255,255,.5);
+                border: 1px solid #666;
+                height: 30px;
+                padding-left: 10px;
+            }
+
+            input:hover, input:focus {
+                opacity: .7;
+                color: $color-beautys-bath;
+                border: 1px solid $color-beautys-bath;
+                box-shadow: 0px 1px 0px rgba(255,255,255,.25),inset 0px 3px 6px rgba(0,0,0,.25);
+                box-shadow: inset 0 1px 2px rgba(255,255,255, .35), 0px 1px 15px $color-beautys-bath;
+                outline: none;
+            }
+
+            @include if-is-medium-screen {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        textarea {
+            margin-top: 10px;
+            width: 100%;
+            height: 10%;
+            padding: 10px; 
+            border-radius: $border-radius-default;
+        }
+
+        textarea:hover, textarea:focus {
+            opacity: .7;
+            color: $color-beautys-bath;
+            border: 1px solid $color-beautys-bath;
+            box-shadow: 0px 1px 0px rgba(255,255,255,.25),inset 0px 3px 6px rgba(0,0,0,.25);
+            box-shadow: inset 0 1px 2px rgba(255,255,255, .35), 0px 1px 15px $color-beautys-bath;
+            outline: none;
+        }
+
+        button {
+            margin-top: 10px;
+            width: 20%;
+            height: 30px;
+            appearance: none;
+            opacity: .99;
+            width:120px;
+            background: $color-beautys-bath;
+            box-shadow: inset 0 1px 2px rgba(255,255,255, .35), 0px 1px 6px rgba(0,246,255,.5);
+            border: 1px solid #0a5378;
+            border-radius: 4px;
+            color: #eee;
+            text-shadow:0px -1px 0px rgba(0,0,0,.5);
+        }
+
+        button:hover {
+            background: $color-beautys-bath;
+            width:120px;
+            border: 1px solid #0a5378;
+            border-radius: 3px;
+            box-shadow: inset 0px 3px 16px rgba(0,0,0,.25),0px 1px 10px rgba(255,255,255,.5),inset 0px -1px 2px rgba(255,255,255,.35);
+            transition: all 0.40s ease-out;
+        } 
+    }
+}

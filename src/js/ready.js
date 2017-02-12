@@ -1,6 +1,7 @@
 var $ = require('jquery');
 var LikeCounter = require('./LikeCounter');
 var DateControl = require('./DateControl');
+var CommsListManager = require('./CommsListManager');
 
 var like = $('.likes');
 var nolike = $('.no-likes');
@@ -8,6 +9,9 @@ var nolike = $('.no-likes');
 
 $(document).ready(function() {
 
+    // cargar las canciones
+    CommsListManager.loadComms();
+    
     // manejador de control de fechas
     DateControl.calcDate();
 

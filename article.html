@@ -80,10 +80,10 @@
 					</div>
 				</div>
 			</article>	
-		</section>
-		<h2 class="comm-title">Comments</h2>
-        <section class="comms-list">            
-            <div class="ui-ideal">
+		</section>		
+		<section class="comms-list"> 
+			<h2 class="comm-title">Comments</h2>           
+			<div class="ui-ideal">
 				<article class="comment">
 					<div class="author-name">
 						José Antonio Maldonado
@@ -92,24 +92,28 @@
 						El mejor comentario del mundo
 					</div>
 				</article>
-            </div>
-            <div class="ui-error">
-                Se ha producido un error
-            </div>
-            <div class="ui-blank">
-                Not comments yet
-            </div>
-            <div class="ui-loading">
-                Loading...
-            </div>
-        </section>
+			</div>
+			<div class="ui-error">
+				<div class="div-error">
+					Se ha producido un error
+				</div>
+			</div>
+			<div class="ui-blank">
+				<div class="div-blank">
+					Not comments yet
+				</div>
+			</div>
+			<div class="ui-loading">
+				<div class="div-loading">
+					Loading...
+				</div>
+			</div>
+		</section>
         <section class="section-form">
             <h2 class="form-title">Add your comment</h2>
             <form class="new-comm-form" novalidate>                
-                <div>
+                <div class="div-mailname">
                     <input type="text" id="form-name" name="name" placeholder="Full name" required>
-                </div>
-                <div>
                     <input type="email" id="form-mail" name="mail" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                 </div>
                 <div>

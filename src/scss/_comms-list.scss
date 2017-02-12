@@ -1,0 +1,87 @@
+
+.comms-list {
+    margin: 30px;
+
+    .comm-title {
+        color: $main-text-color;
+    }
+
+    // ocultamos todos los div que tengan la clase ui-
+    div[class^="ui-"] {
+        display: none;
+    }
+
+    // Estado ideal
+    &.ideal .ui-ideal { 
+        display: flex;
+        flex-direction: column;
+        color: $main-text-color;
+         @include if-is-medium-screen {
+             display: flex;
+             flex-wrap: wrap;
+        }
+
+        .comment {
+            margin: 5px;
+            padding: 5px;
+            background-color: $color-comment-green;
+            border-bottom: 1px solid;
+
+            .author-name {
+                font-weight: bold;
+                @include text-overflow-ellipsis;
+            }
+            .comm-text {
+                margin-top: 10px;
+                @include text-overflow-ellipsis;
+            }
+        }
+    }
+
+    // Estado en blanco vacío
+    &.blank .ui-blank { 
+        display: block; 
+
+        .div-blank {
+            height: 70px;
+            margin: 10px;
+            padding: 5px;
+            background-color: $color-comment-green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;            
+        }
+    }
+
+    // Estado error
+    &.error .ui-error { 
+        display: block; 
+
+        .div-error {
+            height: 70px;
+            margin: 10px;
+            padding: 5px;
+            background-color: $color-comment-error;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;     
+        }
+    }
+
+    // Estado cargando
+    &.loading .ui-loading {
+        display: block;
+
+        .div-loading {
+            height: 70px;
+            margin: 10px;
+            padding: 5px;
+            background-color: $color-comment-green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+     }
+}
