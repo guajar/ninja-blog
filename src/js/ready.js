@@ -2,6 +2,8 @@ var $ = require('jquery');
 var LikeCounter = require('./LikeCounter');
 var DateControl = require('./DateControl');
 var CommsListManager = require('./CommsListManager');
+var Scrollpoints = require('scrollpoints');
+var elem = document.querySelector('#section-comments');
 
 var like = $('.likes');
 var nolike = $('.no-likes');
@@ -10,7 +12,9 @@ var nolike = $('.no-likes');
 $(document).ready(function() {
 
     // cargar las canciones
-    CommsListManager.loadComms();
+    Scrollpoints.add(elem, function(domElement) {
+        CommsListManager.loadComms();
+    });
     
     // manejador de control de fechas
     DateControl.calcDate();
