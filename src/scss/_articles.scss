@@ -91,12 +91,10 @@ $article-border-width: 1px;
                 display: flex;
                 .likes {
                     width: 40px;
-                    border: 0;
                     background: url('../dist/img/star2.png') no-repeat;
                 }
                 .no-likes {
                     width: 40px;
-                    border: 0;
                     background: url('../dist/img/star.png') no-repeat;
                 }
             }
