@@ -40,7 +40,48 @@ var uglifyConfig = {
 var imagesConfig = {
     imagesTaskName: "optimize-images",
     src: "src/img/*",
-    dest: "./dist/img/"
+    dest: "./dist/img/",
+    responsive: {
+        'placeholder.jpg': [ //1450-720-670-350
+            {
+                width: 1024,
+                rename: { suffix: '-1024px' }
+            },
+            {
+                width: 720,
+                rename: { suffix: '-720px' }
+            },
+            {
+                width: 670,
+                rename: { suffix: '-670px' }
+            },
+            {
+                width: 350,
+                rename: { suffix: '-350px' }
+            }
+        ],
+        'yoda.jpeg': [ //1450-720-670-350
+            {
+                width: 1024,
+                rename: { suffix: '-1024px' }
+            },
+            {
+                width: 720,
+                rename: { suffix: '-720px' }
+            },
+            {
+                width: 670,
+                rename: { suffix: '-670px' }
+            },
+            {
+                width: 350,
+                rename: { suffix: '-350px' }
+            }
+        ],
+        '*.png': {
+            width: '100%'
+        }
+    }
 };
 
 
@@ -112,7 +153,7 @@ gulp.task(uglifyConfig.uglifyTaskName, function() {
 // optimiza las imágenes
 gulp.task(imagesConfig.imagesTaskName, function(){
     gulp.src(imagesConfig.src)
-    //.pipe(responsive(imagesConfig.responsive))  // genera las imágenes responsive
+    .pipe(responsive(imagesConfig.responsive))  // genera las imágenes responsive
     .pipe(imagemin())   // optimiza el tamaño de las imagenes
     .pipe(gulp.dest(imagesConfig.dest));
 });
