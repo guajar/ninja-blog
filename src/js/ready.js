@@ -19,8 +19,13 @@ $(document).ready(function() {
     DateControl.calcDate();
 
     // manejador del contador "likes" 
-    $(".art-social").on("click", ".like, .no-likes", function() {
-        var likeId = $(this).attr("id");
-        LikeCounter.counter(likeId);
-    });   
+     // Check for LocalStorage support.
+    if(typeof(Storage)!=="undefined") {
+        $(".art-social").on("click", ".like-button", function() {
+            var likeId = $(this).attr("id");
+            LikeCounter.counter(likeId);
+        });
+    } else {
+        alert ("Sorry, your browser does not support web storage");
+    }   
 });

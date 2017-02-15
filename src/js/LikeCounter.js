@@ -1,17 +1,12 @@
 var $ = require('jquery');
 
-var like = $('.likes');
-var nolike = $('.no-likes');
-
 module.exports = {
-    counter: function(likeId) {
-        var val = localStorage.getItem(likeId);
-        if (val === null || val === undefined) {
+    counter: function(likeId) { 
+        if (!localStorage.getItem(likeId)) {
             localStorage.setItem(likeId, 1);
-            $("#"+likeId).removeClass().addClass('no-likes');  
-                
+            $("#"+likeId).removeClass('no-likes').addClass('likes');                
         } else  {    
-            $("#"+likeId).removeClass().addClass('likes');
+            $("#"+likeId).removeClass('likes').addClass('no-likes');  
             localStorage.removeItem(likeId);            
         }             
     }          
