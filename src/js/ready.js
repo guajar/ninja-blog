@@ -16,10 +16,14 @@ $(document).ready(function() {
     }    
     
     // manejador de control de fechas
-    DateControl.calcDate();
+    var elements = $(this).find(".postDate").each(function(i) { 
+        var element = this;
+        var timeId = $(this).attr("id");
+        DateControl.calcDate(timeId);
+    });
+
 
     // manejador del contador "likes" 
-     // Check for LocalStorage support.
     if(typeof(Storage)!=="undefined") {
         $(".art-social").on("click", ".like-button", function() {
             var likeId = $(this).attr("id");
