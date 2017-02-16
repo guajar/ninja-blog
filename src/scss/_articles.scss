@@ -60,13 +60,14 @@ $article-border-width: 1px;
                 color: $main-text-color;
                 font-weight: normal;
             }
-            .article-image {
-                width: $article-img-width;
-                height: $article-img-height;
-                max-width: 100%;
+            picture {
+                .article-image {
+                    width: $article-img-width;
+                    height: $article-img-height;
 
-                @include if-is-medium-screen {
-                    height: $article-img-height + 20%;
+                    @include if-is-medium-screen {
+                        height: $article-img-height + 20%;
+                    }
                 }
             }
             .div-video {
