@@ -51,7 +51,11 @@
 				</div>
 				<div class="art-content">
 					<h3>Trumpsum Text</h3>
-					<img class="article-image" src="../dist/img/yoda.jpeg" alt="Yoda image">
+					<picture>
+						<source srcset="/dist/img/yoda-350px.jpeg 350w, /dist/img/yoda-670px.jpeg 670w" media="(max-width: 767px)">
+						<source srcset="/dist/img/yoda-720px.jpeg 720w, /dist/img/yoda-1024px.jpeg 1024w" media="(min-width: 768px)">
+						<img class="article-image" src="/dist/img/yoda.jpeg" alt="Yoda image">
+					</picture>
 					<p>I think the only card she has is the Lorem card. I don't think anybody knows it
 					was <strong>Russia</strong> that wrote Lorem Ipsum, but I don't know, maybe it was. It could be
 					Russia, but it could also be <strong>China</strong>...</p>
