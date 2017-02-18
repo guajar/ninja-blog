@@ -9,113 +9,115 @@ $article-border-width: 1px;
     width: 100%;
 	max-width: 1024px;
 	margin: 0 auto;
-    margin-top: 110px;
 
-    .article-container {
-        text-align: justify;
-        text-justify: inter-word;
-        margin: 30px;
-        display: flex;
-        flex-direction: column;
-        border: $article-border-width solid $article-border-color;
-        padding: 10px;
-
-
-        .info-author {
+    .section-container {
+        margin-top: 110px;
+        
+        .article-container {
+            text-align: justify;
+            text-justify: inter-word;
+            margin: 30px;
             display: flex;
-            height: 40px;
+            flex-direction: column;
+            border: $article-border-width solid $article-border-color;
+            padding: 10px;
 
-            #pic-author {      
-                background: url('../dist/img/unknown.png') no-repeat;
-                background-position: center center;
-                border-radius: 50%;
-                width: 40px;
-            }
 
-            .art-detail {
+            .info-author {
                 display: flex;
-                flex-direction: column;
-                margin-left: 10px;
-                
-                #name-author, a {
-                    color: $color-my-green;
+                height: 40px;
+
+                #pic-author {
+                    background: url('../dist/img/unknown.png') no-repeat;
+                    background-position: center center;
+                    border-radius: 50%;
+                    width: 40px;
+                }
+
+                .art-detail {
                     display: flex;
-                }
-
-                .div-time {
-
-                    .readingTime {
-                        margin-left: 10px;
+                    flex-direction: column;
+                    margin-left: 10px;
+                    
+                    #name-author, a {
+                        color: $color-my-green;
+                        display: flex;
                     }
-                }
-            }       
-        }
 
-        .art-content {
-            .link-text {
-                color: $main-text-color;
-                font-weight: bold;
-            }
-            .art-title {
-                color: $main-text-color;
-                font-weight: normal;
-            }
-            picture {
-                .article-image {
-                    width: $article-img-width;
-                    height: $article-img-height;
+                    .div-time {
 
-                    @include if-is-medium-screen {
-                        height: $article-img-height + 20%;
+                        .readingTime {
+                            margin-left: 10px;
+                        }
                     }
-                }
+                }       
             }
-            .div-video {
-                margin-top: -5px;
-                #my-video {
-                    width: $article-img-width;
-                    height: $article-img-height;
-                    max-width: 100%;
 
-                    @include if-is-medium-screen {
-                        height: $article-img-height + 20%;
-                    }
-                }              
-            }
-        }
-
-        .art-social {
-            margin-top: 10px; 
-            height: 40px;
-            display: flex;
-            justify-content: space-between;
-
-            .div-likes {
-                display: flex;
-                .likes {
-                    width: 40px;
-                    background: url('../dist/img/star2.png') no-repeat;
+            .art-content {
+                .link-text {
+                    color: $main-text-color;
+                    font-weight: bold;
                 }
-                .no-likes {
-                    width: 40px;
-                    background: url('../dist/img/star.png') no-repeat;
-                }
-            }
-            
-            .div-comments {
-                display: flex;
-                .num-comm {
-                    margin-top: 15px;
+                .art-title {
                     color: $main-text-color;
                     font-weight: normal;
                 }
-                #comments {
-                    width: 40px;
-                    margin-left: 10px; 
-                    background: url('../dist/img/message.png') no-repeat;
-                }   
+                picture {
+                    .article-image {
+                        width: $article-img-width;
+                        height: $article-img-height;
+                        max-height: 500px;
+                        @include if-is-medium-screen {
+                            height: $article-img-height + 20%;
+                        }
+                    }
+                }
+                .div-video {
+                    margin-top: -5px;
+                    #my-video {
+                        width: $article-img-width;
+                        height: $article-img-height;
+                        max-width: 100%;
+
+                        @include if-is-medium-screen {
+                            height: $article-img-height + 20%;
+                        }
+                    }
+                }
             }
-        }
-            
+
+            .art-social {
+                margin-top: 10px; 
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+
+                .div-likes {
+                    display: flex;
+                    .likes {
+                        width: 40px;
+                        background: url('../dist/img/star2.png') no-repeat;
+                    }
+                    .no-likes {
+                        width: 40px;
+                        background: url('../dist/img/star.png') no-repeat;
+                    }
+                }
+                
+                .div-comments {
+                    display: flex;
+                    .num-comm {
+                        margin-top: 15px;
+                        color: $main-text-color;
+                        font-weight: normal;
+                    }
+                    #comments {
+                        width: 40px;
+                        margin-left: 10px;
+                        background: url('../dist/img/message.png') no-repeat;
+                    }   
+                }
+            }
+        }       
     }
 }

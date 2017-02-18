@@ -7,7 +7,6 @@ $navbar-title-font: $titles-font-family;
 .web-header {
     background: $navbar-background-color;
     padding: 10px;
-    z-index: 100;
     width: 100%;
     top: 0;
     left: 0;
@@ -32,8 +31,7 @@ $navbar-title-font: $titles-font-family;
         @include if-is-medium-screen {
             width: 40px;
         }
-
-    } 
+    }
 
     #web-title {
         margin-top: 20px;
