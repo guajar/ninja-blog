@@ -9,5 +9,13 @@ module.exports = {
             $("#"+likeId).removeClass('likes').addClass('no-likes');  
             localStorage.removeItem(likeId);            
         }             
-    }          
+    }, 
+
+    checkIsLiked: function(likeId) {
+        if (!localStorage.getItem(likeId)) {
+            $("#"+likeId).removeClass('likes').addClass('no-likes');                            
+        } else  {    
+            $("#"+likeId).removeClass('no-likes').addClass('likes');       
+        }             
+    }         
 };

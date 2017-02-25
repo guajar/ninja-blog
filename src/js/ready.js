@@ -16,7 +16,7 @@ $(document).ready(function() {
     }    
     
     // manejador de control de fechas
-    var elements = $(this).find(".postDate").each(function(i) { 
+    $(this).find(".postDate").each(function() { 
         var element = this;
         var timeId = $(this).attr("id");
         DateControl.calcDate(timeId);
@@ -31,5 +31,10 @@ $(document).ready(function() {
         });
     } else {
         alert ("Sorry, your browser does not support web storage");
-    }   
+    } 
+
+    $(this).find(".like-button").each(function() {
+        var likeId = $(this).attr("id");
+        LikeCounter.checkIsLiked(likeId);
+    }); 
 });
